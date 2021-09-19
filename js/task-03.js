@@ -13,21 +13,31 @@ const images = [
     },
 ];
 
-const imageEl = document.createElement("img");
-imageEl.src = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-imageEl.alt = 'White and Black Long Fur Cat';
+const createImagesItem = ({ url, alt }) =>
+`<li style="margin: 0 auto">
+<img src="${url}" alt="${alt}" height = "200">
+</li>`;
+const imagesMarkup = images.reduce((acc, item) =>
+acc + createImagesItem(item), "");
+const imagesList = document.querySelector("#gallery");
+imagesList.insertAdjacentHTML("afterbegin", imagesMarkup);
+
 
 // const imageEl = document.createElement("img");
-// imageEl.src = 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-// imageEl.alt = 'Orange and White Koi Fish Near Yellow Koi Fish';
+// imageEl.src = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+// imageEl.alt = 'White and Black Long Fur Cat';
 
-// const imageEl = document.createElement("img");
-// imageEl.src = 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-// imageEl.alt = 'Group of Horses Running';
+// // const imageEl = document.createElement("img");
+// // imageEl.src = 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+// // imageEl.alt = 'Orange and White Koi Fish Near Yellow Koi Fish';
+
+// // const imageEl = document.createElement("img");
+// // imageEl.src = 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+// // imageEl.alt = 'Group of Horses Running';
 
 
-const itemListEl = document.createElement("li");
-itemListEl.append(imageEl);
-console.log(itemListEl);
+// const itemListEl = document.createElement("li");
+// itemListEl.append(imageEl);
+// console.log(itemListEl);
 
-// imageEl.insertAdjacentHTML("afterbegin", li);
+// // imageEl.insertAdjacentHTML("afterbegin", li);
