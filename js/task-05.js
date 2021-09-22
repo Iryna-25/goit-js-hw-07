@@ -7,7 +7,7 @@ line.input.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
     if(line.input.value === ' '){
-        line.innerHTML = 'незнакомец';
+        line.input.value = 'незнакомец';
 } else {
         line.name.textContent = event.currentTarget.value;  
         console.log(event.currentTarget.value)
